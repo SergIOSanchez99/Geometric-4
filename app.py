@@ -1,14 +1,12 @@
-import os
 from flask import Flask, render_template
+import JuegoModificado  # Importa tu archivo aquí
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')  # Asegúrate de tener este archivo en la carpeta templates.
+    # Aquí puedes llamar a funciones de tu juego o pasar datos a la plantilla
+    return render_template('index.html')  # Asegúrate de que este archivo HTML exista
 
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
-
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)  # Para ejecutar localmente
